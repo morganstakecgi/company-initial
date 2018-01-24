@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.1.RELEASE'
+		springBootVersion = '1.5.9.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -29,6 +29,13 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('mysql:mysql-connector-java')
+	compile('org.springframework.boot:spring-boot-starter-cloud-connectors')
+	compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile('org.springframework.cloud:spring-cloud-config-client')
+	compile('org.springframework.boot:spring-boot-starter-security')	
+	compile('org.springframework.cloud:spring-cloud-starter')
+    compile('org.springframework.cloud:spring-cloud-starter-eureka')
+	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

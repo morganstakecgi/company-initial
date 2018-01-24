@@ -1,0 +1,11 @@
+---
+applications:
+- name: company-initial
+  memory: 1024M
+  buildpack: java_buildpack
+  routes:
+  - route: company-initial-mas.cfapps.io
+services:
+  - companydb
+  - config-server-uri
+  - config-basic-auth
