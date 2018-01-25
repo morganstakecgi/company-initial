@@ -61,7 +61,6 @@ jobs:
   - put: version
     params: {file: version/number}
 
-
 - name: dev-deploy
   serial_groups: [version]
   plan:
@@ -72,6 +71,8 @@ jobs:
     - get: version
       passed: [build]
     - get: pipelines
+  - task: dev-deploy
+    file: ((deploy_dev_task))
 
 - name: major
   serial_groups: [version]
