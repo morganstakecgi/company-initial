@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+echo "test Morgan & Sulman"
 
 version=`cat version/number`
 
