@@ -22,6 +22,7 @@ resources:
   type: semver
   source:
     driver: s3
+    endpoint: ((s3_endpoint))
     bucket: ((version_bucket))
     key: ((version_key))
     access_key_id: ((version_access_key))
@@ -32,6 +33,7 @@ resources:
 - name: artifact
   type: s3
   source:
+    endpoint: ((s3_endpoint))
     regexp: ((artifact_regexp))
     bucket: ((artifact_bucket))
     access_key_id: ((artifact_access_key))
@@ -59,16 +61,17 @@ jobs:
   - put: version
     params: {file: version/number}
 
-# - name: deploy-dev
-#   plan:
-#   - aggregate:
-#     - get: artifact
-#       passed: [build]
-#     - get: app
-#     - get: version
-#       passed: [build]
-#     - get: pipelines
 
+- name: dev-deploy
+  serial_groups: [version]
+  plan:
+  - aggregate:
+    - get: artifact
+      passed: [build]
+    - get: app
+    - get: version
+      passed: [build]
+    - get: pipelines
 
 - name: major
   serial_groups: [version]
