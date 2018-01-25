@@ -1,7 +1,6 @@
 #!/bin/bash
 
-#set -e
-set -x
+set -e
 
 version=`cat version/number`
 
@@ -38,7 +37,6 @@ routes_url=`cf curl $spaces_url |  jq -r '.resources[].entity | select(.name=="'
 echo "routes_url: shows the routes in the space: ${routes_url}"
 
 # get the apps on on the route in the domain
-echo "cf curl $routes_url | jq -r '.resources[].entity | select(.host==\"'\"$CF_HOSTNAME\"'\") | select(.domain_guid==\"'\"$domain_guid\"'\") | .apps_url'"
 apps_url=`cf curl $routes_url | jq -r '.resources[].entity | select(.host=="'"$CF_HOSTNAME"'") | select(.domain_guid=="'"$domain_guid"'") | .apps_url'`
 
 # Fetch the app names assigned to the hostname
