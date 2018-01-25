@@ -25,7 +25,7 @@ cf_dev_organization: rscale-training-2 # set to your org
 cf_dev_space: morgan.stake@cgi.com # set to your space
 cf_dev_hostname: company-mstake # set to 'company-<first_initial><lastname>'. ex: company-sgreenberg
 cf_dev_domain: cfapps.io # set to the apps domain for your CF
-cf_dev_manifest: dev-manifest.yml # set to the dev manifest path in your company app repository. ex: dev-manifest.yml
+cf_dev_manifest: manifest.yml # set to the dev manifest path in your company app repository. ex: dev-manifest.yml
 
 
 s3_endpoint: http://10.144.88.117:9000
