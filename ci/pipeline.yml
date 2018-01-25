@@ -82,6 +82,7 @@ jobs:
       CF_SPACE: ((cf_dev_space))
       CF_MANIFEST: ((cf_dev_manifest))
       CF_DOMAIN: ((cf_dev_domain))
+      JAR_NAME: ((jar_name))
 
 - name: major
   serial_groups: [version]

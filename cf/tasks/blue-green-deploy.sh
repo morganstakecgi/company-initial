@@ -46,6 +46,6 @@ for name in $app_names; do
     if [ "$name" != "$app_name" ]
     then
         echo "deleting $name"
-        cf delete $name -f
+        cf delete $name -f -r
     fi
 done
