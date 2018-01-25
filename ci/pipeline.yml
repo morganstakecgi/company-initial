@@ -62,7 +62,6 @@ jobs:
     params: {file: version/number}
 
 - name: dev-deploy
-  serial_groups: [version]
   plan:
   - aggregate:
     - get: artifact
@@ -83,6 +82,7 @@ jobs:
       CF_SPACE: ((cf_dev_space))
       CF_MANIFEST: ((cf_dev_manifest))
       CF_DOMAIN: ((cf_dev_domain))
+      file: build/*
 
 
 - name: major
