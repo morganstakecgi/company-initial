@@ -28,4 +28,4 @@ cf_dev_domain: cfapps.io # set to the apps domain for your CF
 cf_dev_manifest: manifest.yml # set to the dev manifest path in your company app repository. ex: dev-manifest.yml
 
 
-s3_endpoint: http://10.144.88.117:9000
+s3_endpoint: http://10.231.162.9:9000
